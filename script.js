@@ -63,6 +63,8 @@ let game = function(){
             console.log("Computer wins this round!");
             console.log("Player score: "+playerScore +"\n" + "Computer score: "+computerScore);
         }
+
+        console.log("---------------------");
     }
 
     if(playerScore > computerScore){
