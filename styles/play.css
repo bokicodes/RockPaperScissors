@@ -4,11 +4,81 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("../images/background-wooden1.jpg");
+    background-image: url("../images/background2.jpg");
     background-size: cover;
-    background-position: center center;
+    background-position: bottom;
     background-repeat: no-repeat;
     min-height: 100vh;
-    overflow: hidden;
 
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 15px 5px rgb(252, 252, 252);
+    font-size: 2rem;
+    padding: 10px;
+    font-family: Bungee, "serif";
+}
+img{
+    height: 310px;
+    width: auto;
+    cursor: pointer;
+}
+.flexContainer{
+    margin-top: 70px;
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 120px;
+    flex-grow: 1;
+}
+.rockPic:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 30px 10px rgb(255, 58, 9);
+}
+.paperPic:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 30px 10px rgb(4, 174, 241);
+}
+.scissorsPic:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 30px 10px rgb(207, 207, 123);
+}
+.resultContainer{
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+
+    margin-bottom: 60px;
+}
+.playerSel, .computerSel{
+    font-size: 2.5rem;
+    color: white;
+    font-family: Bungee, "serif";
+}
+.result{
+    flex-grow: 1;
+    font-size: 2.2rem;
+    color: white;
+    font-family: Bungee, "serif";
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+footer{
+    color: white;
+    text-align: center;
+    
+    font-size: 1.4rem;
+}
+footer a{
+    color: rgb(235, 235, 77);
 }

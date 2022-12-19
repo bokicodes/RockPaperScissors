@@ -1,3 +1,10 @@
+const rockPic = document.querySelector(".rockPic");
+const paperPic = document.querySelector(".paperPic");
+const scissorsPic = document.querySelector(".scissorsPic");
+
+const playerSel = document.querySelector(".playerSel");
+const computerSel = document.querySelector(".computerSel");
+const result = document.querySelector(".result");
 
 
 function getComputerChoice(){
@@ -12,67 +19,89 @@ function getComputerChoice(){
     }
 }
 
-let playRound = (playerSelection, computerSelection) => {
-
-    console.log("Player selection: " + playerSelection.charAt(0).toUpperCase() + playerSelection.substr(1));
-    console.log("Computer selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.substr(1));
+let playRound = (playerSelection, computerSelection, playerScore, computerScore) => {
 
     //Player and Computer both select the same weapon
     if(playerSelection === computerSelection){
-        console.log("No winner in this round!");
+        result.innerHTML = "DRAW!"
         return;
     }
     
     //Player selects rock
     if(playerSelection === "rock"){
-        if(computerSelection === "paper") return 0;
-        else if(computerSelection === "scissors") return 1;
+        if(computerSelection === "paper") {
+            computerScore++;
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "PAPER BEATS ROCK, COMPUTER WON THIS ROUND!"
+            return;
+        }
+        else if(computerSelection === "scissors") {
+            playerScore++;
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "ROCK BEATS SCISSORS, YOU WON THIS ROUND!"
+            return;
+        }
     }
 
     //Player selects paper
     if(playerSelection === "paper"){
-        if(computerSelection === "scissors") return 0;
-        else if(computerSelection === "rock") return 1;
+        if(computerSelection === "scissors") {
+            computerScore++;
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "SCISSORS BEATS PAPER, COMPUTER WON THIS ROUND!"
+            return;
+        }
+        else if(computerSelection === "rock") {
+            playerScore++;
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "PAPER BEATS ROCK, YOU WON THIS ROUND!"
+            return;
+        }
     }
 
     //Player selects scissors
     if(playerSelection === "scissors"){
-        if(computerSelection === "rock") return 0;
-        else if(computerSelection === "paper") return 1;
-    }
-
-};
-
-let game = function(){
-
-    let playerScore = 0;
-    let computerScore = 0;
-    
-    for(i = 0; i < 5; i++) {
-
-        let playerSelection = prompt("Select your weapon (rock, paper or scissors): ").toLowerCase();
-        let computerSelection = getComputerChoice().toLowerCase();
-
-        if(playRound(playerSelection, computerSelection)){ // equal to playRound(...) === 1
-            playerScore++;
-            console.log("Player wins this round!");
-            console.log("Player score: "+playerScore +"\n" + "Computer score: "+computerScore);
-        }
-        else{
+        if(computerSelection === "rock") {
             computerScore++;
-            console.log("Computer wins this round!");
-            console.log("Player score: "+playerScore +"\n" + "Computer score: "+computerScore);
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "ROCK BEATS SCISSORS, COMPUTER WON THIS ROUND!"
+            return;
         }
-
-        console.log("---------------------");
-    }
-
-    if(playerScore > computerScore){
-        console.log("PLAYER WINS, GOOD GAME!");
-    }
-    else{
-        console.log("COMPUTER WINS, GOOD GAME!");
+        else if(computerSelection === "paper") {
+            playerScore++;
+            playerSel.innerHTML = "You: "+ playerScore;
+            computerSel.innerHTML = "Computer: " + computerScore;
+            result.innerHTML = "SCISSORS BEATS PAPER, YOU WON THIS ROUND"
+            return;
+        }
     }
 };
 
-game();
+// let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
+// let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
+// if(playerScore === 5 || computerScore === 5){
+//     console.log("game over");
+// }
+
+rockPic.addEventListener("click", () => {
+    let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
+    let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
+    playRound("rock", getComputerChoice().toLowerCase(), playerScore, computerScore);
+});
+
+paperPic.addEventListener("click", () => {
+    let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
+    let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
+    playRound("paper", getComputerChoice().toLowerCase(), playerScore, computerScore);
+});
+
+scissorsPic.addEventListener("click", () => {
+    let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
+    let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
+    playRound("scissors", getComputerChoice().toLowerCase(), playerScore, computerScore);
+});
