@@ -10,6 +10,8 @@ body{
     background-repeat: no-repeat;
     min-height: 100vh;
 
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
@@ -17,12 +19,13 @@ body{
     color: rgb(247, 247, 207);
     font-size: 3.5rem;
     text-align: center;
-    margin-top: 60px;
-
+    margin-top: 90px;
+    flex-grow: 1;
     font-family: Bungee, "serif";
 
 }
 .btnPlay{
+    flex-grow: 1;
     font-size: 2.5rem;
     width: 200px;
     height: 100px;
@@ -33,14 +36,25 @@ body{
     background-color: rgb(51, 50, 50, 0.5);
     border: 1.5px solid white;
     border-radius: 5px;
-
+    font-family: Bungee, "serif";
     position: absolute;
-    bottom: 250px;
-    right: 730px;
+    bottom: 400px;
+    right: 700px;
 }
 .btnPlay:hover{
     font-size: 2.8rem;
     transform: scale(1.2);
 
-    box-shadow: 0 0 15px 5px beige;
+    box-shadow: 0 0 15px 10px beige;
+}
+
+footer{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    font-size: 1.2rem;
+}
+footer a{
+    color: rgb(235, 235, 77);
 }

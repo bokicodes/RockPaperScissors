@@ -6,6 +6,12 @@ const playerSel = document.querySelector(".playerSel");
 const computerSel = document.querySelector(".computerSel");
 const result = document.querySelector(".result");
 
+const popUp = document.querySelector(".popup");
+const playerScorePopUp = document.querySelector(".playerScorePopUp");
+const computerScorePopUp = document.querySelector(".computerScorePopUp");
+const resultPopUp = document.querySelector(".resultPopUp");
+const btnPopUp = document.querySelector(".btnPopUp");
+const overlay = document.querySelector("#overlay");
 
 function getComputerChoice(){
     let number = Math.round(Math.random() * (3.49 - 0.51) + 0.51);
@@ -32,7 +38,11 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         if(computerSelection === "paper") {
             computerScore++;
             if(computerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -43,7 +53,11 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         else if(computerSelection === "scissors") {
             playerScore++;
             if(playerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -58,7 +72,11 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         if(computerSelection === "scissors") {
             computerScore++;
             if(computerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -69,7 +87,11 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         else if(computerSelection === "rock") {
             playerScore++;
             if(playerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -84,7 +106,11 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         if(computerSelection === "rock") {
             computerScore++;
             if(computerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -95,7 +121,12 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         else if(computerSelection === "paper") {
             playerScore++;
             if(playerScore === 5){
-                console.log("GAME OVER!")
+                playerScorePopUp.innerHTML = playerScore;
+                computerScorePopUp.innerHTML = computerScore;
+                resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
+                popUp.style.visibility = "visible"
+                overlay.style.visibility = "visible"
+
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -105,12 +136,6 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         }
     }
 };
-
-// let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
-// let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
-// if(playerScore === 5 || computerScore === 5){
-//     console.log("game over");
-// }
 
 rockPic.addEventListener("click", () => {
     let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
@@ -128,4 +153,8 @@ scissorsPic.addEventListener("click", () => {
     let playerScore = Number(playerSel.innerHTML.split(" ")[1]);
     let computerScore = Number(computerSel.innerHTML.split(" ")[1]);
     playRound("scissors", getComputerChoice().toLowerCase(), playerScore, computerScore);
+});
+
+btnPopUp.addEventListener("click", () => {
+    location.reload();
 });

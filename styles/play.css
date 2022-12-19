@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("../images/background2.jpg");
+    background-image: url("../images/background.jpg");
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -57,22 +57,23 @@ img{
     justify-content: center;
     gap: 130px;
 
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 .playerSel, .computerSel{
-    font-size: 2.5rem;
-    color: white;
+    font-size: 2.7rem;
+    color: beige;
     font-family: Bungee, "serif";
+    padding: 20px;
 }
 .result{
     flex-grow: 1;
-    font-size: 2.2rem;
-    color: white;
+    font-size: 2.6rem;
+    color: beige;
+    text-decoration:wavy;
     font-family: Bungee, "serif";
     text-align: center;
     margin-bottom: 50px;
 }
-
 .popup{
     position: fixed;
     top: 50%;
@@ -80,8 +81,8 @@ img{
     transform: translate(-50%,-50%);
     font-family: Bungee, "serif";
 
-    border: 1px solid white;
-    padding: 20px;
+    border: 2px solid white;
+    padding: 22px;
     color: beige;
     background-color: rgba(43, 41, 41, 0.9);
     z-index: 10;
@@ -93,7 +94,9 @@ img{
 
     width: 600px;
     max-width: 80%;
-    border-radius: 10px;
+    border-radius: 15px;
+
+    visibility: hidden;
 
 }
 .popup h2{
@@ -108,6 +111,9 @@ img{
 .resultPopUp{
     text-align: center;
 }
+.btnLink{
+    align-self: center;
+}
 .btnPopUp{
     border: 1px solid beige;
     border-radius: 5px;
@@ -117,20 +123,30 @@ img{
     width: 150px;
     font-size: 1.3rem;
     text-transform: uppercase;
-    align-self: center;
     font-family: Bungee, "serif";
     cursor: pointer;
+    align-self: center;
 }
 .btnPopUp:hover{
     transform: scale(1.1);
     box-shadow: 0 0 15px 5px rgb(193, 124, 240);
 }
 
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    visibility: hidden;
+}
 footer{
     color: white;
-    text-align: center;
-    
-    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    font-size: 1.2rem;
 }
 footer a{
     color: rgb(235, 235, 77);
