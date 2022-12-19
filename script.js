@@ -31,6 +31,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
     if(playerSelection === "rock"){
         if(computerSelection === "paper") {
             computerScore++;
+            if(computerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "PAPER BEATS ROCK, COMPUTER WON THIS ROUND!"
@@ -38,6 +42,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         }
         else if(computerSelection === "scissors") {
             playerScore++;
+            if(playerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "ROCK BEATS SCISSORS, YOU WON THIS ROUND!"
@@ -49,6 +57,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
     if(playerSelection === "paper"){
         if(computerSelection === "scissors") {
             computerScore++;
+            if(computerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "SCISSORS BEATS PAPER, COMPUTER WON THIS ROUND!"
@@ -56,6 +68,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         }
         else if(computerSelection === "rock") {
             playerScore++;
+            if(playerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "PAPER BEATS ROCK, YOU WON THIS ROUND!"
@@ -67,6 +83,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
     if(playerSelection === "scissors"){
         if(computerSelection === "rock") {
             computerScore++;
+            if(computerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "ROCK BEATS SCISSORS, COMPUTER WON THIS ROUND!"
@@ -74,6 +94,10 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
         }
         else if(computerSelection === "paper") {
             playerScore++;
+            if(playerScore === 5){
+                console.log("GAME OVER!")
+                return;
+            }
             playerSel.innerHTML = "You: "+ playerScore;
             computerSel.innerHTML = "Computer: " + computerScore;
             result.innerHTML = "SCISSORS BEATS PAPER, YOU WON THIS ROUND"

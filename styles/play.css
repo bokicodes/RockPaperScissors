@@ -12,6 +12,7 @@ body{
 
     display: flex;
     flex-direction: column;
+
 }
 .header{
     margin-top: 30px;
@@ -72,6 +73,58 @@ img{
     margin-bottom: 50px;
 }
 
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: Bungee, "serif";
+
+    border: 1px solid white;
+    padding: 20px;
+    color: beige;
+    background-color: rgba(43, 41, 41, 0.9);
+    z-index: 10;
+    font-size: 2.6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    width: 600px;
+    max-width: 80%;
+    border-radius: 10px;
+
+}
+.popup h2{
+    text-align: center;
+}
+.flexPopUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.resultPopUp{
+    text-align: center;
+}
+.btnPopUp{
+    border: 1px solid beige;
+    border-radius: 5px;
+    padding: 13px 7px;
+    background-color: rgba(181, 125, 219, 0.3);
+    color: beige;
+    width: 150px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    align-self: center;
+    font-family: Bungee, "serif";
+    cursor: pointer;
+}
+.btnPopUp:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px rgb(193, 124, 240);
+}
 
 footer{
     color: white;
