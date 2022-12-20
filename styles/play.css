@@ -44,11 +44,11 @@ img{
 }
 .paperPic:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 30px 10px rgb(4, 174, 241);
+    box-shadow: 0 0 30px 10px rgb(0, 178, 248);
 }
 .scissorsPic:hover{
     transform: scale(1.1);
-    box-shadow: 0 0 30px 10px rgb(207, 207, 123);
+    box-shadow: 0 0 30px 10px rgb(218, 218, 48);
 }
 .resultContainer{
     flex-grow: 1;
