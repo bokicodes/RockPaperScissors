@@ -14,6 +14,9 @@ const resultPopUp = document.querySelector(".resultPopUp");
 const btnPopUp = document.querySelector(".btnPopUp");
 const overlay = document.querySelector("#overlay");
 
+const soundWin = new Audio('./audios/win.mp3');
+const soundLose = new Audio('./audios/lose.mp3');
+
 function getComputerChoice(){
     let number = Math.round(Math.random() * (3.49 - 0.51) + 0.51);
     switch(number){
@@ -44,6 +47,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
+                soundLose.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -59,6 +63,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
+                soundWin.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -78,6 +83,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
+                soundLose.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -93,6 +99,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
+                soundWin.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -112,6 +119,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "COMPUTER HAS WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
+                soundLose.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
@@ -127,7 +135,7 @@ let playRound = (playerSelection, computerSelection, playerScore, computerScore)
                 resultPopUp.innerHTML = "YOU HAVE WON THE GAME!"
                 popUp.style.visibility = "visible"
                 overlay.style.visibility = "visible"
-
+                soundWin.play();
                 return;
             }
             playerSel.innerHTML = "You: "+ playerScore;
