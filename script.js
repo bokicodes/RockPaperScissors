@@ -1,3 +1,4 @@
+
 const rockPic = document.querySelector(".rockPic");
 const paperPic = document.querySelector(".paperPic");
 const scissorsPic = document.querySelector(".scissorsPic");
@@ -158,3 +159,4 @@ scissorsPic.addEventListener("click", () => {
 btnPopUp.addEventListener("click", () => {
     location.reload();
 });
+
