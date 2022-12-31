@@ -15,13 +15,14 @@ body{
 
 }
 .header{
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
     color: white;
     box-shadow: 0 0 15px 5px rgb(252, 252, 252);
     font-size: 2rem;
     padding: 10px;
     font-family: Bungee, "serif";
+    flex-grow: 1;
 }
 img{
     height: 310px;
@@ -29,7 +30,7 @@ img{
     cursor: pointer;
 }
 .flexContainer{
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 15px;
 
     display: flex;
