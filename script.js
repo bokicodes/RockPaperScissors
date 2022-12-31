@@ -18,7 +18,7 @@ const soundWin = new Audio('./audios/win.mp3');
 const soundLose = new Audio('./audios/lose.mp3');
 
 function getComputerChoice(){
-    let number = Math.round(Math.random() * (3.49 - 0.51) + 0.51);
+    let number = Math.round(Math.random() * 3);
     switch(number){
         case 1:
             return "Rock";
